@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="primary">
+  <main id="content" role="main" class="">
+
+    {% if True or articles_page.has_previous() or articles_page.has_next() %}
+    <nav id="nav-above">
+      {% include 'post_navigation.html' %}
+	</nav><!-- #nav-above -->
+    {% endif %}
+
+    {% for article in articles_page.object_list %}
+	<article id="TODO" class="TODO post type-post status-publish format-standard category-uncategorized tag-badgelife tag-python h-entry hentry" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting" itemref="site-publisher">
+	  <header class="entry-header">
+		<h1 class="entry-title p-name" itemprop="name headline"><a href="{{ SITEURL }}/{{ article.url }}" class="u-url url" title="Permalink to {{ article.title }}" rel="bookmark" itemprop="url">{{ article.title }}</a></h1>
+
+		<div class="entry-meta">
+		  <span class="sep">Posted on </span><a href="{{ article.url }}" title="{{ article.date|strftime('%I:%M %p') }}" rel="bookmark" class="url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="{{ article.date.isoformat() }}" itemprop="dateModified datePublished">{{ article.locale_date }}</time></a><address class="byline"> <span class="sep"> by </span> <span class="author p-author vcard hcard h-card" itemprop="author " itemscope itemtype="http://schema.org/Person">
+
+              {# TODO #}
+              <img alt='' src='https://secure.gravatar.com/avatar/9b958865122f3d758232df3b2fd76d2e?s=40&#038;d=identicon&#038;r=pg' srcset='https://secure.gravatar.com/avatar/9b958865122f3d758232df3b2fd76d2e?s=80&#038;d=identicon&#038;r=pg 2x' class='avatar avatar-40 photo u-photo' height='40' width='40' itemprop="image" loading='lazy'/>
+
+              {# TODO #}
+              <a class="url uid u-url u-uid fn p-name" href="https://projectgus.com/author/angus/" title="View all posts by angus" rel="author" itemprop="url"><span itemprop="name">angus</span></a></span></address>
+        </div><!-- .entry-meta -->
+	  </header><!-- .entry-header -->
+
+	  <div class="entry-content e-content" itemprop="description articleBody">
+        {% if loop.first and not articles_page.has_previous() %}
+        {{ article.content }}
+        {% else %}
+        {{article.summary}}
+        <p>
+          <a href="{{ article.url }}" class="more-link">Continue reading <span class="meta-nav">→</span></a>
+        </p>
+        {% endif %}
+	  </div><!-- .entry-content -->
+
+	  <footer class="entry-meta">
+	    Posted		<span class="cat-links">
+		  in <a href="{{ SITEURL }}/{{ article.category.url }}" rel="category tag">{{ article.category }}</a>	</span>
+
+        {% if article.tags %}
+		<span class="sep"> | </span>
+	    <span class="tag-links" itemprop="keywords">
+
+          Tagged
+          {% for tag in article.tags %}
+          <a class="p-category" href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>{%if not loop.last%},{%endif%}
+          {% endfor %}
+        </span>
+        {% endif %}
+
+		<span class="sep"> | </span>
+
+        {# TODO #}
+	    <span class="comments-link"><a href="https://projectgus.com/2022/01/sha2017-badge-solar-monitor/#comments">NaN Comments</a></span>
+
+	  </footer><!-- #entry-meta -->
+    </article>
+    {% endfor %}
+
+    {% if articles_page.has_previous() or articles_page.has_next() %}
+    <nav id="nav-below">
+      {% include 'post_navigation.html' %}
+	</nav><!-- #nav-below -->
+    {% endif %}
+
+
+
+  </main><!-- #content -->
+</section><!-- #primary -->
+
+{% endblock content %}
+
+{% block sidebar %}
+
+<aside id="sidebar">
+  <div id="secondary" class="widget-area" role="complementary">
+
+	<section id="search" class="widget widget_search">
+	  <form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" role="search" method="get" class="search-form" action="https://projectgus.com/">
+		<label>
+		  <span class="screen-reader-text">Search for:</span>
+		  <input type="search" itemprop="query-input" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+		</label>
+		<input type="submit" class="search-submit" value="Search" />
+		<meta itemprop="target" content="https://projectgus.com/?s={search} "/></form>				</section>
+
+	<section id="archives" class="widget">
+	  <h3 class="widget-title">Archives</h3>
+      {%if True or YEAR_ARCHIVE_SAVE_AS %}
+	  <ul>
+        {% for year in dates|map(attribute='date')|map(attribute='year')|unique %}
+        {# TODO make this URL somehow derived from YEAR_ARCHIVE_SAVE_AS #}
+		<li><a href='{{ SITEURL }}/{{ year }}'>{{ year }}</a></li>
+        {% endfor %}
+	  </ul>
+      {% endif %}
+      {# TODO Support MONTH and DAY as well? #}
+	</section>
+
+	<section id="meta" class="widget">
+	  <h3 class="widget-title">Meta</h3>
+	  <ul>
+		<li><a href="https://projectgus.com/wp-login.php">Log in</a></li>
+	  </ul>
+	</section>
+
+  </div><!-- #secondary .widget-area -->
+
+</aside>
+
+{% endblock sidebar %}

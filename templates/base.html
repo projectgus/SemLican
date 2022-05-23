@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="profile" href="http://microformats.org/profile/specs" />
+    <link rel="profile" href="http://microformats.org/profile/hatom" />
+
+    <title>{% block title %}{{ SITENAME }} &#8211; {{ TAGLINE }}{% endblock title %}</title>
+    <meta name='robots' content='max-image-preview:large' />
+
+    {# TODO make these match the FEED_DOMAIN/FEED_ATOM stuff #}
+    <link rel="alternate" type="application/rss+xml" title="Project Gus &raquo; Feed" href="https://projectgus.com/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Project Gus &raquo; Comments Feed" href="https://projectgus.com/comments/feed/" />
+
+    <link rel='stylesheet' id='sempress-style-css'  href='https://projectgus.com/wp-content/themes/sempress/style.css' type='text/css' media='all' />
+
+    <style type="text/css" id="sempress-custom-colors">
+	  body { text-shadow: 0 1px 0 #ffffff; }
+	  body, a { color: #555555; }
+	  .widget, #access {
+		  border-bottom: 1px solid #cccccc;
+		  -moz-box-shadow: #ffffff 0 1px 0 0;
+		  -webkit-box-shadow: #ffffff 0 1px 0 0;
+		  box-shadow: #ffffff 0 1px 0 0;
+	  }
+	  article.comment {
+		  border-top: 1px solid #ffffff;
+		  -moz-box-shadow: #cccccc 0 -1px 0 0;
+		  -webkit-box-shadow: #cccccc 0 -1px 0 0;
+		  box-shadow: #cccccc 0 -1px 0 0;
+	  }
+    </style>
+    <style type="text/css" id="custom-background-css">
+      body.custom-background { background-image: url("https://projectgus.com/wp-content/themes/sempress/img/noise.png"); background-position: left top; background-size: auto; background-repeat: repeat; background-attachment: fixed; }
+    </style>
+  </head>
+
+  {# TODO: classes here may be different for different pages #}
+  <body class="home blog custom-background multi-column single-author hfeed h-feed feed" itemscope="" itemtype="http://schema.org/Blog http://schema.org/WebPage">
+
+    {# TODO: I'm not sure all this crap is but I think it can be removed #}
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div id="page">
+      
+	<header id="branding" role="banner">
+	  <h1 id="site-title" itemprop="name" class="p-name"><a href="{{ SITEURL }}" title="{{ SITENAME }}" rel="home" itemprop="url" class="u-url url">{{ SITENAME }}</a></h1>
+	  <h2 id="site-description" itemprop="description" class="p-summary e-content">{{ TAGLINE }}</h2>
+
+		<nav id="access" role="navigation">
+			<h1 class="assistive-text section-heading"><a href="#access" title="Main menu">Main menu</a></h1>
+			<a class="skip-link screen-reader-text" href="#content" title="Skip to content">Skip to content</a>
+
+			<div class="menu"><ul>
+            {% if DISPLAY_PAGES_ON_MENU %}
+            {% for p in pages %}
+            <li class="{% if p==page %}current_page_item{% else %}page_item{% endif %}">
+              <a href="{{ SITEURL}}/{{ p.url }}">{{ p.title }}</a></li>
+            {% endfor %}
+            {% endif %}
+
+            {% if DISPLAY_CATEGORIES_ON_MENU %}
+            {% for cat, null in categories %}
+            {% if cat != DEFAULT_CATEGORY %}
+            <li class="{% if cat==category %}current_page_item{% else %}page_item{% endif %}"><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+            {% for title, link in MENUITEMS %}
+            <li class="page_item"><a href="{{ link }}">{{ title }}</a></li>
+            {% endfor %}
+
+            </ul></div>
+		</nav><!-- #access -->
+	</header><!-- #branding -->
+
+    <div id="main">
+
+          {% block content %}
+          {% endblock %}
+
+	<aside id="sidebar">
+
+      {% block sidebar %}
+      {% endblock %}
+
+    </aside>
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+		<div id="site-publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+			<meta itemprop="name" content="Project Gus" />
+			<meta itemprop="url" content="https://projectgus.com/" />
+					</div>
+		<div id="site-generator">
+						This site is powered by <a href="https://blog.getpelican.com/" rel="generator">Pelican</a> and styled with <a href="http://github.com/projectgus/SemIcan/">SemIcan</a>		</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+</body>
+</html>
+

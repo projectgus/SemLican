@@ -6,7 +6,7 @@
     <link rel="profile" href="http://microformats.org/profile/specs" />
     <link rel="profile" href="http://microformats.org/profile/hatom" />
 
-    <title>{% block title %}{{ SITENAME }} &#8211; {{ TAGLINE }}{% endblock title %}</title>
+    <title>{% block title %}{{ SITENAME }} {% if SEMICAN_TAGLINE %}&#8211; {{ SEMICAN_TAGLINE }}{% endif %}{% endblock title %}</title>
     <meta name='robots' content='max-image-preview:large' />
 
     {# TODO make these match the FEED_DOMAIN/FEED_ATOM stuff #}
@@ -44,7 +44,9 @@
       
 	<header id="branding" role="banner">
 	  <h1 id="site-title" itemprop="name" class="p-name"><a href="{{ SITEURL }}" title="{{ SITENAME }}" rel="home" itemprop="url" class="u-url url">{{ SITENAME }}</a></h1>
-	  <h2 id="site-description" itemprop="description" class="p-summary e-content">{{ TAGLINE }}</h2>
+      {%if SEMICAN_TAGLINE %}
+	  <h2 id="site-description" itemprop="description" class="p-summary e-content">{{ SEMICAN_TAGLINE }}</h2>
+      {% endif %}
 
 		<nav id="access" role="navigation">
 			<h1 class="assistive-text section-heading"><a href="#access" title="Main menu">Main menu</a></h1>

@@ -7,28 +7,20 @@
 
     {% if True or articles_page.has_previous() or articles_page.has_next() %}
     <nav id="nav-above">
-      {% include 'post_navigation.html' %}
+      {% include 'index_navigation.html' %}
 	</nav><!-- #nav-above -->
     {% endif %}
 
     {% for article in articles_page.object_list %}
-	<article id="TODO" class="TODO post type-post status-publish format-standard category-uncategorized tag-badgelife tag-python h-entry hentry" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting" itemref="site-publisher">
+	<article id="{{ article.slug }}" class="post type-post status-publish format-standard h-entry hentry" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting" itemref="site-publisher">
 	  <header class="entry-header">
 		<h1 class="entry-title p-name" itemprop="name headline"><a href="{{ SITEURL }}/{{ article.url }}" class="u-url url" title="Permalink to {{ article.title }}" rel="bookmark" itemprop="url">{{ article.title }}</a></h1>
-
-		<div class="entry-meta">
-		  <span class="sep">Posted on </span><a href="{{ article.url }}" title="{{ article.date|strftime('%I:%M %p') }}" rel="bookmark" class="url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="{{ article.date.isoformat() }}" itemprop="dateModified datePublished">{{ article.locale_date }}</time></a><address class="byline"> <span class="sep"> by </span> <span class="author p-author vcard hcard h-card" itemprop="author " itemscope itemtype="http://schema.org/Person">
-
-              {# TODO #}
-              <img alt='' src='https://secure.gravatar.com/avatar/9b958865122f3d758232df3b2fd76d2e?s=40&#038;d=identicon&#038;r=pg' srcset='https://secure.gravatar.com/avatar/9b958865122f3d758232df3b2fd76d2e?s=80&#038;d=identicon&#038;r=pg 2x' class='avatar avatar-40 photo u-photo' height='40' width='40' itemprop="image" loading='lazy'/>
-
-              {# TODO #}
-              <a class="url uid u-url u-uid fn p-name" href="https://projectgus.com/author/angus/" title="View all posts by angus" rel="author" itemprop="url"><span itemprop="name">angus</span></a></span></address>
-        </div><!-- .entry-meta -->
+a
+        {% include 'article_meta.html' %}
 	  </header><!-- .entry-header -->
 
 	  <div class="entry-content e-content" itemprop="description articleBody">
-        {% if loop.first and not articles_page.has_previous() %}
+        {% if loop.first and not articles_page.has_previous() and not SEMICAN_LATEST_POST_SUMMARY %}
         {{ article.content }}
         {% else %}
         {{article.summary}}
@@ -64,7 +56,7 @@
 
     {% if articles_page.has_previous() or articles_page.has_next() %}
     <nav id="nav-below">
-      {% include 'post_navigation.html' %}
+      {% include 'index_navigation.html' %}
 	</nav><!-- #nav-below -->
     {% endif %}
 

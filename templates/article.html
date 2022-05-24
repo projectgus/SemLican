@@ -1,0 +1,73 @@
+    {% extends "base.html" %}
+
+    {% block title %}{{ article.title|striptags }} &ndash; {{ SITENAME }}{% endblock %}
+
+    {% block content %}
+
+<section id="primary">
+  <main id="content" role="main" class="h-entry hentry">
+
+    <nav id="nav-above">
+      {% include 'article_navigation.html' %}
+    </nav><!-- #nav-above -->
+
+    <article id="{{ article.slug }}" class="post type-post status-publish format-standard" itemref="site-publisher">
+      <header class="entry-header">
+        <h1 class="entry-title p-name" itemprop="name headline"><a href="{{ article.url }}" class="u-url url" title="Permalink to {{ article.title }}" rel="bookmark" itemprop="url">{{ article.title }}</a></h1>
+
+        {% include 'article_meta.html' %}
+      </header><!-- .entry-header -->
+
+      <div class="entry-content e-content" itemprop="description articleBody">
+
+          {# TODO article.headerimage support? #}
+          {% if article.headerimage %}
+          <div class="headerimage-article">
+            <img src="{{ article.headerimage }}" style="width: 100%;">
+            {% if article.headerimagecaption %}
+            <p class="caption">{{ article.headerimagecaption }}</p>
+            {% endif %}
+          </div>
+          {% endif %}
+
+          {{article.content}}
+
+      </div><!-- .entry-content -->
+
+<footer class="entry-meta"> {# TODO #}
+    Posted		<span class="cat-links">
+        in <a href="https://projectgus.com/category/uncategorized/" rel="category tag">Uncategorized</a>	</span>
+
+        <span class="sep"> | </span>
+    <span class="tag-links" itemprop="keywords">
+        Tagged <a class="p-category" href="https://projectgus.com/tag/badgelife/" rel="tag">badgelife</a>, <a class="p-category" href="https://projectgus.com/tag/python/" rel="tag">python</a>	</span>
+
+
+        <span class="sep"> | </span>
+    <span class="comments-link"><a href="https://projectgus.com/2022/01/sha2017-badge-solar-monitor/#comments">2 Comments</a></span>
+
+    </footer><!-- #entry-meta -->
+
+      </article>
+
+    <nav id="nav-below">
+      {% include 'article_navigation.html' %}
+    </nav><!-- #nav-below -->
+
+    <div id="comments">
+      {# TODO comments #}
+    </div> <!-- #comments -->
+
+
+  </main><!-- #content -->
+</section><!-- #primary -->
+
+{% endblock content %}
+
+{% block sidebar %}
+
+<aside id="sidebar">
+
+</aside>
+
+{% endblock sidebar %}

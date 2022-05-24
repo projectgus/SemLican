@@ -1,0 +1,8 @@
+<h1 class="assistive-text section-heading">Post navigation</h1>
+{% if article.prev_article %}
+<div class="nav-previous"><a href="{{ SITEURL }}/{{ article.prev_article.url }}" rel="prev"><span class="meta-nav">&larr;</span>{{ article.prev_article.title }}</a></div>
+{% endif %}
+{% if article.next_article %}
+<div class="nav-next"><a href="{{ SITEURL }}/{{ article.next_article.url }}" rel="next">{{ article.next_article.title }}<span class="meta-nav">→</span></a></div>
+{% endif %}
+

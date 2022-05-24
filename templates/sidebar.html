@@ -1,0 +1,47 @@
+<aside id="sidebar">
+  <div id="secondary" class="widget-area" role="complementary">
+
+    {# TODO implement search #}
+	<section id="search" class="widget widget_search">
+	  <form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" role="search" method="get" class="search-form" action="https://projectgus.com/">
+		<label>
+		  <span class="screen-reader-text">Search for:</span>
+		  <input type="search" itemprop="query-input" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+		</label>
+		<input type="submit" class="search-submit" value="Search" />
+		<meta itemprop="target" content="https://projectgus.com/?s={search} "/></form>				</section>
+
+    <section id="recent-posts-3" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+          {% for recent in dates[:5] %}
+		  <li>
+			<a href="{{ SITEURL }}/{{ recent.url }}">{{ recent.title }}</a>
+          </li>
+          {% endfor %}
+	    </ul>
+	</section>
+
+	<section id="archives" class="widget">
+	  <h3 class="widget-title">Archives</h3>
+      {%if YEAR_ARCHIVE_SAVE_AS %}
+	  <ul>
+        {% for year in dates|map(attribute='date')|map(attribute='year')|unique %}
+        {# TODO make this URL somehow derived from YEAR_ARCHIVE_SAVE_AS #}
+		<li><a href='{{ SITEURL }}/{{ year }}'>{{ year }}</a></li>
+        {% endfor %}
+	  </ul>
+      {% endif %}
+      {# TODO Support MONTH and DAY as well? #}
+	</section>
+
+	<section id="meta" class="widget">
+	  <h3 class="widget-title">Meta</h3>
+	  <ul>
+		<li><a href="https://projectgus.com/wp-login.php">Log in</a></li>
+	  </ul>
+	</section>
+
+  </div><!-- #secondary .widget-area -->
+
+</aside>

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Categories &ndash; {{ SITENAME }}{% endblock %}
+
+{% block content %}
+
+
+<section id="primary">
+  <main id="content" role="main" class="">
+
+    {% block content_title %}
+    <header class="page-header">
+	  <h1 class="page-title">Categories for {{ SITENAME }}</h1>
+    </header>
+    {% endblock content_title %}
+
+    <article id="categories" class="page type-page">
+      <div class="entry-content e-content">
+        <h2>All Categories</h2>
+        <ul>
+          {% for category, articles in categories %}
+          <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }} ({{ articles|count }})</a></li>
+          {% endfor %}
+        </ul>
+      </div> <!-- .entry-content -->
+    </article>
+
+    {% for category, articles in categories %}
+    <article id="{{ category }}" class="page type-page">
+        <div class="entry-content e-content">
+        <h2>Articles for {{ category }}</h2>
+        <ul>
+          {% for article in articles %}
+          <li><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time> <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+          {% endfor %}
+        </ul>
+        </div> <!-- .entry-content -->
+      </article>
+      {% endfor %}
+
+  </main>
+</section>
+
+{% endblock content %}

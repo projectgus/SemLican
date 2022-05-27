@@ -1,0 +1,28 @@
+    {% extends "base.html" %}
+
+    {% block title %}{{ page.title }} &ndash; {{ SITENAME }}{% endblock %}
+
+    {% block content %}
+
+<section id="primary">
+  <main id="content" role="main" class="h-entry hentry">
+
+    <article id="{{ page.slug }}" class="page type-page">
+      <header class="entry-header">
+	    <h1 class="entry-title p-name" itemprop="name headline"><a href="{{ page.url }}" class="u-url url" title="Permalink to {{ page.title }}" rel="bookmark" itemprop="url">{{ page.title }}</a></h1>
+      </header><!-- .entry-header -->
+
+      <div class="entry-content e-content" itemprop="description text">
+        {{ page.content }}
+
+        {% if page.modified %}
+        <br>
+        <p>Last updated: {{ page.locale_modified }}</p>
+        {% endif %}
+
+      </div><!-- .entry-content -->
+    </article>
+  </main>
+</section>
+
+{% endblock content %}

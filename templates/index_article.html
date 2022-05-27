@@ -1,0 +1,41 @@
+	<article id="{{ article.slug }}" class="post type-post status-publish format-standard h-entry hentry" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting" itemref="site-publisher">
+	  <header class="entry-header">
+		<h1 class="entry-title p-name" itemprop="name headline"><a href="{{ SITEURL }}/{{ article.url }}" class="u-url url" title="Permalink to {{ article.title }}" rel="bookmark" itemprop="url">{{ article.title }}</a></h1>
+
+        {% include 'article_meta.html' %}
+	  </header><!-- .entry-header -->
+
+	  <div class="entry-content e-content" itemprop="description articleBody">
+        {# on the first index page (only), show the most recent article in full unless SEMLICAN_LATEST_POST_SUMMARY is set #}
+        {% if articles_page and article == articles_page.object_list[0] and not articles_page.has_previous() and not SEMLICAN_LATEST_POST_SUMMARY %}
+        {{ article.content }}
+        {% else %}
+        {{article.summary}}
+        <p>
+          <a href="{{ article.url }}" class="more-link">Continue reading <span class="meta-nav">→</span></a>
+        </p>
+        {% endif %}
+	  </div><!-- .entry-content -->
+
+	  <footer class="entry-meta">
+	    Posted		<span class="cat-links">
+		  in <a href="{{ SITEURL }}/{{ article.category.url }}" rel="category tag">{{ article.category }}</a>	</span>
+
+        {% if article.tags %}
+		<span class="sep"> | </span>
+	    <span class="tag-links" itemprop="keywords">
+
+          Tagged
+          {% for tag in article.tags %}
+          <a class="p-category" href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>{%if not loop.last%},{%endif%}
+          {% endfor %}
+        </span>
+        {% endif %}
+
+		<span class="sep"> | </span>
+
+        {# TODO #}
+	    <span class="comments-link"><a href="https://projectgus.com/2022/01/sha2017-badge-solar-monitor/#comments">NaN Comments</a></span>
+
+	  </footer><!-- #entry-meta -->
+    </article>

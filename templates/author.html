@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block title %}{{ author }} &ndash; {{ SITENAME }}{% endblock %}
+
+{% block content_title %}
+
+<header class="page-header author vcard h-card" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <h1 class="page-title">Author Archives: <a class="url u-url fn p-fn n p-name" href="{{ SITEURL }}/{{ author.url }}" title="{{ author }}" rel="me author" itemprop="url"><span itemprop="name">{{ author }}</span></a></h1>
+  {% if SEMLICAN_AUTHOR_AVATARS[author] %}
+  <img alt="" src="{{ SEMLICAN_AUTHOR_AVATARS[author] }}" class="avatar avatar-40 photo u-photo" itemprop="image" loading="lazy" width="40" height="40">
+  {% endif %}
+</header>
+
+{% endblock content_title %}

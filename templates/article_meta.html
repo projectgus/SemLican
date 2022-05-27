@@ -1,9 +1,5 @@
 		<div class="entry-meta">
 		  <span class="sep">Posted on </span><a href="{{ article.url }}" title="{{ article.date|strftime('%I:%M %p') }}" rel="bookmark" class="url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="{{ article.date.isoformat() }}" itemprop="dateModified datePublished">{{ article.locale_date }}</time></a><address class="byline"> <span class="sep"> by </span> <span class="author p-author vcard hcard h-card" itemprop="author " itemscope itemtype="http://schema.org/Person">
 
-              {# TODO #}
-              <img alt='' src='https://secure.gravatar.com/avatar/9b958865122f3d758232df3b2fd76d2e?s=40&#038;d=identicon&#038;r=pg' srcset='https://secure.gravatar.com/avatar/9b958865122f3d758232df3b2fd76d2e?s=80&#038;d=identicon&#038;r=pg 2x' class='avatar avatar-40 photo u-photo' height='40' width='40' itemprop="image" loading='lazy'/>
-
-              {# TODO #}
-              <a class="url uid u-url u-uid fn p-name" href="https://projectgus.com/author/angus/" title="View all posts by angus" rel="author" itemprop="url"><span itemprop="name">angus</span></a></span></address>
+              <a class="url uid u-url u-uid fn p-name" href="{{ SITEURL }}/{{ article.author.url }}" title="View all posts by {{ article.author }}" rel="author" itemprop="url"><span itemprop="name">{{ article.author }}</span></a></span></address>
         </div><!-- .entry-meta -->

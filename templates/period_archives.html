@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Archive for {{ period | reverse | join(' ') }} &ndash; {{ SITENAME }}{% endblock %}
+
+{% block content %}
+
+<section id="primary">
+  <main id="content" role="main" class="">
+
+    {% block content_title %}
+    <header class="page-header">
+	  <h1 class="page-title">Archive for <span>{{ period | reverse | join(' ') }}</span></h1>
+    </header>
+    {% endblock content_title %}
+
+    {% for article in dates %}
+    {% include 'index_article.html' %}
+    {% endfor %}
+
+  </main><!-- #content -->
+</section><!-- #primary -->
+
+{% endblock content %}

@@ -6,7 +6,7 @@
     <link rel="profile" href="http://microformats.org/profile/specs" />
     <link rel="profile" href="http://microformats.org/profile/hatom" />
 
-    <title>{% block title %}{{ SITENAME }} {% if SEMICAN_TAGLINE %}&#8211; {{ SEMICAN_TAGLINE }}{% endif %}{% endblock title %}</title>
+    <title>{% block title %}{{ SITENAME }} {% if SEMLICAN_TAGLINE %}&#8211; {{ SEMLICAN_TAGLINE }}{% endif %}{% endblock title %}</title>
     <meta name='robots' content='max-image-preview:large' />
 
     {# TODO make these match the FEED_DOMAIN/FEED_ATOM stuff #}
@@ -44,8 +44,8 @@
       
 	<header id="branding" role="banner">
 	  <h1 id="site-title" itemprop="name" class="p-name"><a href="{{ SITEURL }}" title="{{ SITENAME }}" rel="home" itemprop="url" class="u-url url">{{ SITENAME }}</a></h1>
-      {%if SEMICAN_TAGLINE %}
-	  <h2 id="site-description" itemprop="description" class="p-summary e-content">{{ SEMICAN_TAGLINE }}</h2>
+      {%if SEMLICAN_TAGLINE %}
+	  <h2 id="site-description" itemprop="description" class="p-summary e-content">{{ SEMLICAN_TAGLINE }}</h2>
       {% endif %}
 
 		<nav id="access" role="navigation">
@@ -53,6 +53,11 @@
 			<a class="skip-link screen-reader-text" href="#content" title="Skip to content">Skip to content</a>
 
 			<div class="menu"><ul>
+
+            {% for title, link in MENUITEMS %}
+            <li class="page_item"><a href="{{ link }}">{{ title }}</a></li>
+            {% endfor %}
+
             {% if DISPLAY_PAGES_ON_MENU %}
             {% for p in pages %}
             <li class="{% if p==page %}current_page_item{% else %}page_item{% endif %}">
@@ -67,10 +72,6 @@
             {% endif %}
             {% endfor %}
             {% endif %}
-
-            {% for title, link in MENUITEMS %}
-            <li class="page_item"><a href="{{ link }}">{{ title }}</a></li>
-            {% endfor %}
 
             </ul></div>
 		</nav><!-- #access -->
@@ -93,7 +94,7 @@
 			<meta itemprop="url" content="https://projectgus.com/" />
 					</div>
 		<div id="site-generator">
-						This site is powered by <a href="https://blog.getpelican.com/" rel="generator">Pelican</a> and styled with <a href="http://github.com/projectgus/SemIcan/">SemIcan</a>		</div>
+						This site is powered by <a href="https://blog.getpelican.com/" rel="generator">Pelican</a> and styled with <a href="http://github.com/projectgus/SemLican-theme/">Semlican</a>		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

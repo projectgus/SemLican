@@ -1,8 +1,10 @@
+{% if articles_page %} {# otherwise, this is period_archives.html #}
 <h1 class="assistive-text section-heading">Post navigation</h1>
 {% if articles_page.has_next() %}
 <div class="nav-previous"><a href="{{ SITEURL }}/{{ articles_next_page.url }}"  rel="prev"><span class="meta-nav">&larr;</span> Older posts</a></div>
 {% endif %}
 {% if articles_page.has_previous() %}
 <div class="nav-next"><a href="{{ SITEURL }}/{{ articles_previous_page.url }}" rel="previous">Newer posts <span class="meta-nav">→</span></a></div>
+{% endif %}
 {% endif %}
 

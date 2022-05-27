@@ -7,7 +7,7 @@
 
 	  <div class="entry-content e-content" itemprop="description articleBody">
         {# on the first index page (only), show the most recent article in full unless SEMLICAN_LATEST_POST_SUMMARY is set #}
-        {% if articles_page and article == articles_page.object_list[0] and not articles_page.has_previous() and not SEMLICAN_LATEST_POST_SUMMARY %}
+        {% if output_file == "index.html" and article == articles_page.object_list[0] and not SEMLICAN_LATEST_POST_SUMMARY %}
         {{ article.content }}
         {% else %}
         {{article.summary}}

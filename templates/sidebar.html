@@ -12,13 +12,14 @@
 	    </ul>
 	</section>
 
-    {# If 'period' is set then we are rendering `period_archives`, and `dates` is just the ones shown on this page #}
-    {%if YEAR_ARCHIVE_SAVE_AS and not period %}
+    {# Don't show archives on 'period' or 'tag' pages, because 'dates' variable
+    is filtered to just the articles shown on that page #}
+    {%if YEAR_ARCHIVE_SAVE_AS and not (period or tag) %}
 	<section id="archives" class="widget">
 	  <h3 class="widget-title">Archives</h3>
 	  <ul>
         {% for year in dates|map(attribute='date')|map(attribute='year')|unique %}
-        {# TODO make this URL somehow derived from YEAR_ARCHIVE_SAVE_AS #}
+        {# TODO make this work with other values of YEAR_ARCHIVE_SAVE_AS #}
 		<li><a href='{{ SITEURL }}/{{ year }}'>{{ year }}</a></li>
         {% endfor %}
 	  </ul>

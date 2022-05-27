@@ -41,6 +41,7 @@ In `pelicanconf.py`:
   YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
   MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
   ```
+* `YEAR_ARCHIVE_SAVE_AS` has to be set as shown above for the Archives in the sidebar to work
 
 On server:
 

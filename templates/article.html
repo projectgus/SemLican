@@ -34,17 +34,22 @@
 
       </div><!-- .entry-content -->
 
-<footer class="entry-meta"> {# TODO #}
+<footer class="entry-meta">
     Posted		<span class="cat-links">
-        in <a href="https://projectgus.com/category/uncategorized/" rel="category tag">Uncategorized</a>	</span>
+        in <a href="{{ SITEURL }}/{{ article.category.url }}" rel="category tag">{{ article.category }}</a>	</span>
 
-        <span class="sep"> | </span>
+    <span class="sep"> | </span>
+    {% if article.tags %}
     <span class="tag-links" itemprop="keywords">
-        Tagged <a class="p-category" href="https://projectgus.com/tag/badgelife/" rel="tag">badgelife</a>, <a class="p-category" href="https://projectgus.com/tag/python/" rel="tag">python</a>	</span>
+      Tagged
+      {% for tag in article.tags %}
+      <a class="p-category" href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>{%if not loop.end %},{% endif %}
+      {% endfor %}
+    </span>
+    {% endif %}
 
-
-        <span class="sep"> | </span>
-    <span class="comments-link"><a href="https://projectgus.com/2022/01/sha2017-badge-solar-monitor/#comments">2 Comments</a></span>
+        <span class="sep"> | </span> {# TODO comments #}
+    <span class="comments-link"><a href="https://projectgus.com/2022/01/sha2017-badge-solar-monitor/#comments">NaN Comments</a></span>
 
     </footer><!-- #entry-meta -->
 

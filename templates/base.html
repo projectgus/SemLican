@@ -9,9 +9,18 @@
     <title>{% block title %}{{ SITENAME }} {% if SEMLICAN_TAGLINE %}&#8211; {{ SEMLICAN_TAGLINE }}{% endif %}{% endblock title %}</title>
     <meta name='robots' content='max-image-preview:large' />
 
-    {# TODO make these match the FEED_DOMAIN/FEED_ATOM stuff #}
-    <link rel="alternate" type="application/rss+xml" title="Project Gus &raquo; Feed" href="https://projectgus.com/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Project Gus &raquo; Comments Feed" href="https://projectgus.com/comments/feed/" />
+    {% if FEED_ALL_RSS %}
+    <link rel="alternate" type="application/rss+xml" title="{{ SITENAME }} &raquo; RSS Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" />
+    {% endif %}
+    {% if FEED_ALL_ATOM %}
+    <link rel="alternate" type="application/atom+xml" title="{{ SITENAME }} &raquo; Atom Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" />
+    {% endif %}
+    {% if FEED_RSS %}
+    <link rel="alternate" type="application/rss+xml" title="{{ SITENAME }} &raquo; RSS Feed" href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" />
+    {% endif %}
+    {% if FEED_ATOM %}
+    <link rel="alternate" type="application/atom+xml" title="{{ SITENAME }} &raquo; Atom Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" />
+    {% endif %}
 
     <link rel='stylesheet' id='sempress-style-css'  href='https://projectgus.com/wp-content/themes/sempress/style.css' type='text/css' media='all' />
 

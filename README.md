@@ -15,6 +15,7 @@ Compared to SemPress:
 * Probably less Semantic microformats and microdata is included (PRs welcome to re-add the ones that I missed).
 * The `archives.html` and `categories.html` list pages don't really have equivalents in WordPress. Semlican has some basic pages for these, but they're not well done.
 * On filtered pages - "Period archive" pages (yearly, monthly, daily posts), Tag pages, and Category pages - there is no Archive section in the sidebar (seems like a Pelican limitation, `dates` object is already filtered to only have what is shown on the page.)
+* No Category or Tag RSS/Atom feed URLs
 
 
 Compared to other Pelican themes:
@@ -40,12 +41,19 @@ In `pelicanconf.py`:
 
   YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
   MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+
+  FEED_ALL_RSS = `feed.rss`
+  FEED_ALL_ATOM = `/feed/atom.xml`  # TODO check these
   ```
 * `YEAR_ARCHIVE_SAVE_AS` has to be set as shown above for the Archives in the sidebar to work
 
 On server:
 
-* Ensure sure the web server will search .html extensions, i.e `/tag/name/` should serve `/tag/name.html` as well as `/tag/name/index.html`
+* Ensure sure the web server will search .html, .rss and .xml extensions as well as index.html, i.e
+  - `/tag/name/` should serve `/tag/name.html` if it exists
+  - `/tag/othername/` should serve `/tag/othername/index.html` if it exists
+  - `/tag/feed/` should serve `/tag/feed.rss` if it exists (assuming the `FEED_ALL_RSS` shown above)
+* 
 
 ## Recommended/Supported Plugins
 

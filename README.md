@@ -1,10 +1,10 @@
 # SemLican
 
-An incomplete port of the [SemPress](https://github.com/pfefferle/SemPress) WordPress theme to the [Pelican static site generator](pelican.com).
+An incomplete port of the [SemPress](https://github.com/pfefferle/SemPress) WordPress theme to the [Pelican static site generator](pelican.com). (*Naming things is hard*...)
 
 ## Support note
 
-I did this for my blog https://projectgus.com so the features it supports are generally the ones I wanted. I'm interested in fixing bugs in the features I sue, and I'm happy to accept PRs for new features if they've been tested to work well, but in general **SemLican is unsupported and is suitable for all use cases**.
+I did this for my blog https://projectgus.com so the features it supports are generally the ones I wanted. I'm interested in fixing bugs in the features that I use, and I'm happy to accept PRs for new features if they've been tested to work well. However in general **SemLican is unsupported and is not suitable for all use cases**.
 
 ## Limitations
 
@@ -13,10 +13,9 @@ Compared to SemPress:
 * The SemPress sidebar by default contains a search field and is otherwise fully configurable using WordPress Widgets. The SemLican sidebar is currently hard-coded to show five Recent Posts, and yearly archive links if ``YEARLY_ARCHIVE_SAVE_AS` is enabled. It's possible to fork the theme and edit `templates/sidebar.html` to have whatever you want, of course.
 * English translation only at this time
 * Probably less Semantic microformats and microdata is included (PRs welcome to re-add the ones that I missed).
-* The `archives.html` and `categories.html` list pages don't really have equivalents in WordPress. Semlican has some basic pages for these, but they're not well done.
-* On filtered pages - "Period archive" pages (yearly, monthly, daily posts), Tag pages, and Category pages - there is no Archive section in the sidebar (seems like a Pelican limitation, `dates` object is already filtered to only have what is shown on the page.)
+* The `archives.html` and `categories.html` list pages don't really have equivalents in WordPress. SemLican has some basic pages for these, but they're not well done.
+* On filtered pages - "Period archive" pages (yearly, monthly, daily posts), Tag pages, and Category pages - there is no Archive section in the sidebar (seems like a Pelican limitation, `dates` object is already filtered to only include the articles that are shown on the page, so there's nothing to generate the Archive from.)
 * No Category or Tag RSS/Atom feed URLs
-
 
 Compared to other Pelican themes:
 
@@ -53,7 +52,6 @@ On server:
   - `/tag/name/` should serve `/tag/name.html` if it exists
   - `/tag/othername/` should serve `/tag/othername/index.html` if it exists
   - `/tag/feed/` should serve `/tag/feed.rss` if it exists (assuming the `FEED_ALL_RSS` shown above)
-* 
 
 ## Recommended/Supported Plugins
 

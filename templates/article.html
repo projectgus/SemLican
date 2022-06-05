@@ -59,10 +59,18 @@
       {% include 'article_navigation.html' %}
     </nav><!-- #nav-below -->
 
+    {% if SEMLICAN_ISSO_DATA_URL %}
     <div id="comments">
-      {# TODO comments #}
+      <h2 id="comments-title">
+	    Thoughts on “<span>{{ article.title }}</span>”
+      </h2>
+      <script data-isso="{{ SEMLICAN_ISSO_DATA_URL }}/"
+              data-isso-css="false" data-isso-vote="false"
+              src="{{ SEMLICAN_ISSO_SRC_URL "></script>
+      <section id="isso-thread"></section>
+      <noscript>Comments provided using self-hosted <a href="https://github.com/posativ/isso/">Isso. JavaScript is unfortunately required.</noscript>
     </div> <!-- #comments -->
-
+    {% endif %}
 
   </main><!-- #content -->
 </section><!-- #primary -->

@@ -23,6 +23,12 @@ Compared to other Pelican themes:
 * The `tags.html` list page is not implemented (individual tag URLs are implemented).
 * If configured, "Period archives" pages (yearly, monthly, daily posts) show post summaries (like Wordpress) instead of a list of post titles (like Pelican)
 
+## Required Plugins
+
+Run `python -m pip install -r requirements.txt` to get all of these in one go.
+
+* [neighbors plugin](https://github.com/pelican-plugins/neighbors)
+* [webassets plugin](https://github.com/pelican-plugins/webassets)
 
 ## Configuration
 
@@ -52,7 +58,3 @@ On server:
   - `/tag/name/` should serve `/tag/name.html` if it exists
   - `/tag/othername/` should serve `/tag/othername/index.html` if it exists
   - `/tag/feed/` should serve `/tag/feed.rss` if it exists (assuming the `FEED_ALL_RSS` shown above)
-
-## Recommended/Supported Plugins
-
-* [neighbors plugin](https://github.com/pelican-plugins/neighbors) `python -m pip install pelican-neighbors`

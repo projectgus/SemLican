@@ -22,7 +22,9 @@
     <link rel="alternate" type="application/atom+xml" title="{{ SITENAME }} &raquo; Atom Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" />
     {% endif %}
 
-    <link rel='stylesheet' id='sempress-style-css'  href='https://projectgus.com/wp-content/themes/sempress/style.css' type='text/css' media='all' />
+    {% assets filters="scss,cssmin", output="css/style.min.css", "sass/style.scss" %}
+    <link rel='stylesheet' id='sempress-style-css' href="{{ SITEURL }}/{{ ASSET_URL }}">
+    {% endassets %}
 
     <style type="text/css" id="sempress-custom-colors">
 	  body { text-shadow: 0 1px 0 #ffffff; }

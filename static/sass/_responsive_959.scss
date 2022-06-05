@@ -1,0 +1,45 @@
+#page {
+  width: 670px;
+  margin: 0px auto;
+}
+#sidebar {
+  float: right;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 25px;
+  margin-top: 25px;
+}
+#main .widget-area {
+  float: left;
+  overflow: hidden;
+  width: 300px;
+}
+#secondary {
+  padding-right: 69px;
+}
+#primary {
+  width: auto;
+  float: inherit;
+}
+#content {
+  margin: 0;
+}
+.custom-logo-link {
+  display: none;
+}
+.post, .error404, .sticky {
+  &:before {
+    content: none;
+  }
+}
+.format-status .entry-meta .avatar {
+  display: none;
+}
+.entry-content .avatar {
+  display: none;
+}
+#site-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}

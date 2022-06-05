@@ -1,0 +1,52 @@
+@mixin rounded($rad) {
+  -moz-border-radius: $rad;
+  -webkit-border-radius: $rad;
+  -o-border-radius: $rad;
+  -ms-border-radius: $rad;
+  -khtml-border-radius: $rad;
+  border-radius: $rad;
+}
+
+@mixin custom-rounded($tl, $tr, $br, $bl) {
+  -moz-border-radius: $tl $tr $br $bl;
+  -webkit-border-radius: $tl $tr $br $bl;
+  -o-border-radius: $tl $tr $br $bl;
+  -ms-border-radius: $tl $tr $br $bl;
+  -khtml-border-radius: $tl $tr $br $bl;
+  border-radius: $tl $tr $br $bl;
+}
+
+@mixin box-shadow($hor-len, $ver-len, $blur, $spread, $color) {
+  -webkit-box-shadow: $hor-len $ver-len $blur $spread $color;
+  -moz-box-shadow: $hor-len $ver-len $blur $spread $color;
+  box-shadow: $hor-len $ver-len $blur $spread $color;
+}
+
+@mixin reset-box-shadow {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+@mixin reset-rounded {
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  -o-border-radius: none;
+  -ms-border-radius: none;
+  -khtml-border-radius: none;
+  border-radius: none;
+}
+
+@mixin border-shadow-top {
+  border-top: 1px solid #fff;
+  -moz-box-shadow: #ccc 0 -1px 0 0;
+  -webkit-box-shadow: #ccc 0 -1px 0 0;
+  box-shadow: #ccc 0 -1px 0 0;
+}
+
+@mixin border-shadow-bottom {
+  border-bottom: 1px solid #ccc;
+  -moz-box-shadow: #FFF 0 1px 0 0;
+  -webkit-box-shadow: #FFF 0 1px 0 0;
+  box-shadow: #FFF 0 1px 0 0;
+}

@@ -1,0 +1,14 @@
+.post-likes-widget {
+  overflow: hidden;
+}
+
+// infinite-scroll comes with jetpack
+.infinite-scroll {
+  #nav-below, #nav-above, #colophon {
+    display: none;
+  }
+}
+
+.jp-carousel-wrap {
+  text-shadow: none;
+}

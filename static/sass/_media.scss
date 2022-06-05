@@ -1,0 +1,258 @@
+.entry-header .entry-media {
+  padding: 0px;
+  margin: 0px auto;
+  text-align: center;
+  background-color: #F5F5F5;
+  @include custom-rounded($border-radius, $border-radius, 0px, 0px);
+  iframe, object, embed {
+    margin: 0px auto;
+    text-align: center;
+  }
+  img, .wp-caption {
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+  }
+}
+
+.entry-media {
+  img, iframe, object, embed {
+    margin-top: 20px;
+  }
+
+  img.alignright {
+    margin-right: 34px;
+  }
+
+  img.alignleft {
+    margin-left: 34px;
+  }
+}
+
+.wp-audio-shortcode {
+  margin: 20px auto;
+}
+
+.entry-content {
+  iframe, object, embed {
+    max-width: 100%;
+  }
+}
+
+figure {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* =Images
+-------------------------------------------------------------- */
+
+a img {
+  border: 0 none;
+}
+p img {
+  margin-bottom: 0.5em; /* a small bottom margin prevents content floating under images */
+}
+/*
+Resize images to fit the main content area.
+- Applies only to images uploaded via WordPress by targeting size-* classes.
+- Other images will be left alone. Use "size-auto" class to apply to other images.
+*/
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img,
+.widget-area img,
+.wp-caption,
+.post img,
+.page img {
+  max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+  height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
+img.aligncenter,
+img.attachment-thumbnail,
+img.size-thumbnail,
+.wp-caption.aligncenter img,
+.wp-caption.alignnone img,
+.media-attachment img,
+.entry-attachment img {
+  @include box-shadow(0, 1px, 4px, 0, rgba(0, 0, 0, 0.2));
+}
+.wp-caption .wp-caption-text,
+.gallery-caption,
+.entry-caption,
+.entry-media figcaption {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 2;
+  color: #777;
+}
+div.aligncenter, .gallery {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.wp-smiley {
+  margin: 0;
+  border: 0;
+  vertical-align: middle;
+}
+#page img.avatar {
+  @include box-shadow(0, 1px, 5px, 0, rgba(0,0,0,0.2));
+  @include rounded(500px);
+}
+
+/* Image Attachments */
+.image-attachment div.entry-meta {
+  float: left;
+}
+.image-attachment nav {
+  float: right;
+  margin: 0 30px 1em 0;
+}
+.image-attachment .entry-content {
+  clear: both;
+}
+.image-attachment .entry-content .entry-attachment {
+  text-align: center;
+}
+.entry-content .media-attachment iframe,
+.entry-content .media-attachment object,
+.entry-content .media-attachment embed {
+  display: block;
+  margin: 15px auto;
+  padding: 0;
+  text-align: center;
+  background-color: #444;
+  background-image: -moz-linear-gradient(top,#555,#333);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#555),to(#333));
+  filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr="#555555",endColorStr="#333333");
+}
+
+.entry-meta .avatar {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+
+.gallery {
+  clear: both;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.gallery .gallery-item {
+  overflow: hidden;
+  float: left;
+  margin: 10px 0 0;
+  text-align: center;
+  list-style: none;
+}
+
+.gallery-caption {
+  font-size: 11px;
+}
+
+/*
+Image sizes depending on the number of columns
+Based on Hybrid theme
+*/
+.gallery-columns-0 .gallery-item {
+  width: 100%;
+}
+.gallery-columns-1 .gallery-item {
+  width: 100%;
+}
+.gallery-columns-2 .gallery-item {
+  width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+  width: 33.33%;
+}
+.gallery-columns-4 .gallery-item {
+  width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+  width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+  width: 16.66%;
+}
+.gallery-columns-7 .gallery-item {
+  width: 14.28%;
+}
+.gallery-columns-8 .gallery-item {
+  width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+  width: 11.11%;
+}
+.gallery-columns-10 .gallery-item {
+  width: 10%;
+}
+.gallery-columns-11 .gallery-item {
+  width: 9.09%;
+}
+.gallery-columns-12 .gallery-item {
+  width: 8.33%;
+}
+.gallery-columns-13 .gallery-item {
+  width: 7.69%;
+}
+.gallery-columns-14 .gallery-item {
+  width: 7.14%;
+}
+.gallery-columns-15 .gallery-item {
+  width: 6.66%;
+}
+.gallery-columns-16 .gallery-item {
+  width: 6.25%;
+}
+.gallery-columns-17 .gallery-item {
+  width: 5.88%;
+}
+.gallery-columns-18 .gallery-item {
+  width: 5.55%;
+}
+.gallery-columns-19 .gallery-item {
+  width: 5.26%;
+}
+.gallery-columns-20 .gallery-item {
+  width: 5%;
+}
+.gallery-columns-21 .gallery-item {
+  width: 4.76%;
+}
+.gallery-columns-22 .gallery-item {
+  width: 4.54%;
+}
+.gallery-columns-23 .gallery-item {
+  width: 4.34%;
+}
+.gallery-columns-24 .gallery-item {
+  width: 4.16%;
+}
+.gallery-columns-25 .gallery-item {
+  width: 4%;
+}
+.gallery-columns-26 .gallery-item {
+  width: 3.84%;
+}
+.gallery-columns-27 .gallery-item {
+  width: 3.7%;
+}
+.gallery-columns-28 .gallery-item {
+  width: 3.57%;
+}
+.gallery-columns-29 .gallery-item {
+  width: 3.44%;
+}
+.gallery-columns-30 .gallery-item {
+  width: 3.33%;
+}

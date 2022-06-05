@@ -1,0 +1,29 @@
+h1.section-heading {
+  font-size: 20px;
+}
+#site-title {
+  a {
+    font-size: 0.7em;
+  }
+  margin-bottom: 20px;
+}
+#branding {
+  margin-top: 50px;
+}
+#site-description {
+  display: none;
+}
+#page {
+  position: inherit;
+}
+.entry-header .entry-title {
+  a {
+    font-size: 30px;
+  }
+  font-size: 30px;
+  line-height: 1;
+}
+iframe, object, embed {
+  height: auto;
+  max-width: 100%;
+}

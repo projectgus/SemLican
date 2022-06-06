@@ -9,7 +9,11 @@
 
     <article id="{{ page.slug }}" class="page type-page">
       <header class="entry-header">
+        {% if page not in hidden_pages %}
 	    <h1 class="entry-title p-name" itemprop="name headline"><a href="{{ page.url }}" class="u-url url" title="Permalink to {{ page.title }}" rel="bookmark" itemprop="url">{{ page.title }}</a></h1>
+        {% else %} {# Don't make permalinks for hidden pages #}
+        <h1 class="entry-title p-name">{{page.title }}</h1>
+        {% endif %}
       </header><!-- .entry-header -->
 
       <div class="entry-content e-content" itemprop="description text">

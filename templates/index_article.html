@@ -32,10 +32,10 @@
         </span>
         {% endif %}
 
-		<span class="sep"> | </span>
-
-        {# TODO #}
-	    <span class="comments-link"><a href="https://projectgus.com/2022/01/sha2017-badge-solar-monitor/#comments">NaN Comments</a></span>
+        {% if SEMLICAN_ISSO_DATA_URL %}
+        <span class="sep"> | </span>
+        <span class="comments-link"><a href="{{ SITEURL }}/{{ article.url }}#comments">Comments</a></span>
+        {% endif %}
 
 	  </footer><!-- #entry-meta -->
     </article>

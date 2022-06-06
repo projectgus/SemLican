@@ -50,7 +50,7 @@
 
         {% if SEMLICAN_ISSO_DATA_URL %}
         <span class="sep"> | </span>
-        <span class="comments-link"><a href="https://projectgus.com/2022/01/sha2017-badge-solar-monitor/#comments">Comments</a></span>
+        <span class="comments-link"><a href="{{ SITEURL }}/{{ article.url }}#comments">Comments</a></span>
         {% endif %}
 
     </footer><!-- #entry-meta -->
@@ -68,7 +68,7 @@
       </h2>
       <script data-isso="{{ SEMLICAN_ISSO_DATA_URL }}/"
               data-isso-css="false" data-isso-vote="false"
-              src="{{ SEMLICAN_ISSO_SRC_URL "></script>
+              src="{{ SEMLICAN_ISSO_SRC_URL }}"></script>
       <section id="isso-thread"></section>
       <noscript>Comments provided using self-hosted <a href="https://github.com/posativ/isso/">Isso. JavaScript is unfortunately required.</noscript>
     </div> <!-- #comments -->

@@ -53,7 +53,8 @@ In `pelicanconf.py`:
 * `YEAR_ARCHIVE_SAVE_AS` has to be set as shown above for the Archives in the sidebar to work
 
     * `SEMLICAN_ISSO_DATA_URL` and `SEMLICAN_ISSO_SRC_URL` - If both are set then articles will include a comments section for the self-hosted comments software [Isso](https://github.com/posativ/isso/). `SEMLICAN_ISSO_DATA_URL` is the value for `data-isso=` and `SEMLICAN_ISSO_SRC_URL` is the value for `src=`, both in the script tag. CSS for Isso is provided separately in the theme, and has been tweaked a little to look similar to SemPress (not the same).
-* `SEMLICAN_HIDE_CATEGORIES` - if set to True, disable any "Posted in *category*" headers and footers on articles. Category pages are still generated but they're not linked anywhere by default.
+* `SEMLICAN_HIDE_CATEGORIES` - if set to True, disable any "Posted in *category*" headers and footers on articles. Category pages are still generated but they're not linked from articles.
+* `SEMLICAN_HIDE_AUTHOR` - if set to True, disable any byline of "by *author*" on articles. Author pages are still generated but they're not linked from articles.
 
 
 On server:

@@ -13,7 +13,7 @@
 
     <article id="{{ article.slug }}" class="post type-post status-publish format-standard" itemref="site-publisher">
       <header class="entry-header">
-        <h1 class="entry-title p-name" itemprop="name headline"><a href="{{ article.url }}" class="u-url url" title="Permalink to {{ article.title }}" rel="bookmark" itemprop="url">{{ article.title }}</a></h1>
+        <h1 class="entry-title p-name" itemprop="name headline"><a href="{{ SITEURL }}/{{ article.url }}" class="u-url url" title="Permalink to {{ article.title }}" rel="bookmark" itemprop="url">{{ article.title }}</a></h1>
 
         {% include 'article_meta.html' %}
       </header><!-- .entry-header -->

@@ -75,7 +75,7 @@
             {% endfor %}
             {% endif %}
 
-            {% if DISPLAY_CATEGORIES_ON_MENU %}
+            {% if DISPLAY_CATEGORIES_ON_MENU and not SEMLICAN_HIDE_CATEGORIES %}
             {% for cat, null in categories %}
             {% if cat != DEFAULT_CATEGORY %}
             <li class="{% if cat==category %}current_page_item{% else %}page_item{% endif %}"><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>

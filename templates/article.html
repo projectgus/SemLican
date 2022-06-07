@@ -34,13 +34,17 @@
 
       </div><!-- .entry-content -->
 
-<footer class="entry-meta">
+      <footer class="entry-meta">
+        {% if not SEMLICAN_HIDE_CATEGORIES %}
     Posted		<span class="cat-links">
-        in <a href="{{ SITEURL }}/{{ article.category.url }}" rel="category tag">{{ article.category }}</a>	</span>
+          in <a href="{{ SITEURL }}/{{ article.category.url }}" rel="category tag">{{ article.category }}</a>	</span>
+        {% endif %}
 
-    <span class="sep"> | </span>
-    {% if article.tags %}
-    <span class="tag-links" itemprop="keywords">
+        {% if article.tags %}
+        {% if not SEMLICAN_HIDE_CATEGORIES %}
+        <span class="sep"> | </span>
+        {% endif %}
+        <span class="tag-links" itemprop="keywords">
       Tagged
       {% for tag in article.tags %}
       <a class="p-category" href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>{%if not loop.end %},{% endif %}
@@ -49,7 +53,9 @@
     {% endif %}
 
         {% if SEMLICAN_ISSO_DATA_URL %}
+        {% if article.tags or not SEMLICAN_HIDE_CATEGORIES %}
         <span class="sep"> | </span>
+        {% endif %}
         <span class="comments-link"><a href="{{ SITEURL }}/{{ article.url }}#comments">Comments</a></span>
         {% endif %}
 

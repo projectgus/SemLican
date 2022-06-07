@@ -18,11 +18,15 @@
 	  </div><!-- .entry-content -->
 
 	  <footer class="entry-meta">
+        {% if not SEMLICAN_HIDE_CATEGORIES %}
 	    Posted		<span class="cat-links">
 		  in <a href="{{ SITEURL }}/{{ article.category.url }}" rel="category tag">{{ article.category }}</a>	</span>
+        {% endif %}
 
         {% if article.tags %}
+        {% if not SEMLICAN_HIDE_CATEGORIES %}
 		<span class="sep"> | </span>
+        {% endif %}
 	    <span class="tag-links" itemprop="keywords">
 
           Tagged
@@ -33,7 +37,9 @@
         {% endif %}
 
         {% if SEMLICAN_ISSO_DATA_URL %}
+        {% if article.tags or not SEMLICAN_HIDE_CATEGORIES %}
         <span class="sep"> | </span>
+        {% endif %}
         <span class="comments-link"><a href="{{ SITEURL }}/{{ article.url }}#comments">Comments</a></span>
         {% endif %}
 

@@ -14,7 +14,7 @@ Like SemPress, SemLican is licensed under GPL 3.0 as per the license.txt file. S
 
 Compared to SemPress:
 
-* The SemPress sidebar by default contains a search field and is otherwise fully configurable using WordPress Widgets. The SemLican sidebar is currently hard-coded to show five Recent Posts, and yearly archive links if ``YEARLY_ARCHIVE_SAVE_AS` is enabled. It's possible to fork the theme and edit `templates/sidebar.html` to have whatever you want, of course.
+* The SemPress sidebar by default contains a search field and is otherwise fully configurable using WordPress Widgets. The SemLican sidebar is currently hard-coded to show five Recent Posts, and yearly archive links if `YEARLY_ARCHIVE_SAVE_AS` is enabled. It's possible to fork the theme and edit `templates/sidebar.html` to have whatever you want, of course.
 * English translation only at this time
 * Probably less Semantic microformats and microdata is included (PRs welcome to re-add the ones that I missed).
 * The `archives.html` and `categories.html` list pages don't really have equivalents in WordPress. SemLican has some basic pages for these, but they're not well done.

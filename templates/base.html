@@ -9,13 +9,13 @@
     <title>{% block title %}{{ SITENAME }} {% if SEMLICAN_TAGLINE %}&#8211; {{ SEMLICAN_TAGLINE }}{% endif %}{% endblock title %}</title>
     <meta name='robots' content='max-image-preview:large' />
 
-    {% if FEED_ALL_RSS %}
+    {% if FEED_ALL_RSS and not SEMLICAN_HIDE_RSS_LINKS %}
     <link rel="alternate" type="application/rss+xml" title="{{ SITENAME }} &raquo; RSS Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" />
     {% endif %}
     {% if FEED_ALL_ATOM %}
     <link rel="alternate" type="application/atom+xml" title="{{ SITENAME }} &raquo; Atom Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" />
     {% endif %}
-    {% if FEED_RSS %}
+    {% if FEED_RSS and not SEMLICAN_HIDE_RSS_LINKS %}
     <link rel="alternate" type="application/rss+xml" title="{{ SITENAME }} &raquo; RSS Feed" href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" />
     {% endif %}
     {% if FEED_ATOM %}

@@ -71,6 +71,12 @@ img.size-medium,
   max-width: 100%; /* When images are too wide for containing element, force them to fit. */
   height: auto; /* Override height to match resized width for correct aspect ratio. */
 }
+img.full-width {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
 img.aligncenter,
 img.attachment-thumbnail,
 img.size-thumbnail,

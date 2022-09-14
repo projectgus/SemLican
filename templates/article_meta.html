@@ -1,5 +1,6 @@
 		<div class="entry-meta">
-		  <span class="sep">Posted on </span><a href="{{ SITEURL }}/{{ article.url }}" title="{{ article.date|strftime('%I:%M %p') }}" rel="bookmark" class="url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="{{ article.date.isoformat() }}" itemprop="dateModified datePublished">{{ article.locale_date }}</time></a>
+		  <span class="sep">{% if article.status == "published" %}Posted{%else%}Drafted{%endif%} on </span>
+          <a href="{{ SITEURL }}/{{ article.url }}" title="{{ article.date|strftime('%I:%M %p') }}" rel="bookmark" class="url u-url"><time class="entry-date updated published dt-updated dt-published" datetime="{{ article.date.isoformat() }}" itemprop="dateModified datePublished">{{ article.locale_date }}</time></a>
 
           {% if not SEMLICAN_HIDE_AUTHOR %}
           <address class="byline">

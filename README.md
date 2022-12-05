@@ -42,7 +42,7 @@ In `pelicanconf.py`:
 
 * Set `DEFAULT_DATE_FORMAT` if you want dates to match WordPress ones. I use `DEFAULT_DATE_FORMAT = '%B %d, %Y'`
 * Set URLs to match Wordpress URLs, i.e.
-  ```
+  ```python
   ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}/'
   ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}/index.html'
   PAGE_URL = 'pages/{slug}/'

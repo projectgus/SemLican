@@ -30,6 +30,23 @@
           </div>
           {% endif %}
 
+          {% if article.series and article.series.all|length > 1 %}
+          <div class="series">
+            <p>This is part {{ article.series.index }} of series "{{ article.series.name }}":</p>
+            <ol class="parts">
+            {% for part_article in article.series.all %}
+            <li>
+              {% if part_article == article %}
+              <i>{{ part_article.title }}</i> (this post)
+              {% else %}
+              <a href='{{ SITEURL }}/{{ part_article.url }}'>{{ part_article.title }}</a>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ol>
+          </div>
+          {% endif %}
+
           {{article.content}}
 
       </div><!-- .entry-content -->

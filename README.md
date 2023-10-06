@@ -33,6 +33,7 @@ Run `python -m pip install -r requirements.txt` to get all of these in one go.
 
 * [neighbors plugin](https://github.com/pelican-plugins/neighbors)
 * [webassets plugin](https://github.com/pelican-plugins/webassets)
+* (Optional) [series plugin](https://github.com/pelican-plugins/series)
 
 ## Configuration
 
@@ -65,4 +66,4 @@ On server:
 * Ensure that the web server will search .html, .rss and .xml extensions as well as index.html, i.e
   - `/tag/name/` should serve `/tag/name.html` if it exists
   - `/tag/othername/` should serve `/tag/othername/index.html` if it exists
-  - `/feed/` should server `/feed.rss` if it exists (assuming `FEED_ALL_RSS` set as shown above)
+  - `/feed/` should serve `/feed.rss` if it exists (assuming `FEED_ALL_RSS` set as shown above)

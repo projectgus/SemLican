@@ -12,3 +12,9 @@ article.comment {
 	-webkit-box-shadow: #cccccc 0 -1px 0 0;
 	box-shadow: #cccccc 0 -1px 0 0;
 }
+div.series {
+	background-color: #f8fefe;
+	margin: 20px 20px 20px 20px;
+	padding: 10px 20px 10px 20px;
+	border: 1px solid #e0f0fe;
+}

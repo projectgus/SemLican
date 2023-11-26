@@ -18,3 +18,8 @@ div.series {
 	padding: 10px 20px 10px 20px;
 	border: 1px solid #e0f0fe;
 }
+
+p.caption {
+    text-align: center;
+    font-size: 0.6em;
+}

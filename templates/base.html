@@ -32,6 +32,7 @@
     <style type="text/css" id="custom-background-css">
       body.custom-background { background-image: url("{{ SITEURL }}/theme/images/noise.png"); background-position: left top; background-size: auto; background-repeat: repeat; background-attachment: fixed; }
     </style>
+    {% block extra_head %}{% endblock %}
   </head>
 
   <body class="home blog custom-background multi-column single-author hfeed h-feed feed" itemscope="" itemtype="http://schema.org/Blog http://schema.org/WebPage">
@@ -94,6 +95,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+{%block extra_body %}{% endblock %}
 </body>
 </html>
 
